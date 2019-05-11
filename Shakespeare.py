@@ -7,7 +7,7 @@ import torch.nn.functional as F
 print("hello")
 
 # Open shakespeare text file and read in data as `text`
-with open('CreationMusicale/data/shakespeare.txt', 'r') as f:
+with open('data/shakespeare.txt', 'r') as f:
     text = f.read()
 
 # Showing the first 100 characters
