@@ -10,7 +10,6 @@ with open('data/shakespeare.txt', 'r') as f:
 
 # Showing the first 100 characters
 text[:100]
-print(text[:100])
 
 # encoding the text and map each character to an integer and vice versa
 
@@ -18,11 +17,8 @@ print(text[:100])
 # 1. int2char, which maps integers to characters
 # 2. char2int, which maps characters to integers
 chars = tuple(set(text))
-print(chars)
 int2char = dict(enumerate(chars))
-print(int2char)
 char2int = {ch: ii for ii, ch in int2char.items()}
-print(char2int)
 
 # Encode the text
 encoded = np.array([char2int[ch] for ch in text])
@@ -30,11 +26,8 @@ encoded = np.array([char2int[ch] for ch in text])
 # Showing the first 100 encoded characters
 encoded[:100]
 
-print(encoded[:100])
-
 # Defining method to encode one hot labels
 def one_hot_encode(arr, n_labels):
-    print("one_hot_encode")
     
     # Initialize the the encoded array
     one_hot = np.zeros((np.multiply(*arr.shape), n_labels), dtype=np.float32)
@@ -49,7 +42,6 @@ def one_hot_encode(arr, n_labels):
     
 # Defining method to make mini-batches for training
 def get_batches(arr, batch_size, seq_length):
-    print("get_batches")
     '''Create a generator that returns batches of size
        batch_size x seq_length from arr.
        
@@ -154,7 +146,6 @@ class CharRNN(nn.Module):
        
 # Declaring the train method
 def train(net, data, epochs=10, batch_size=10, seq_length=50, lr=0.001, clip=5, val_frac=0.1, print_every=10):
-    print("training")
     ''' Training a network 
     
         Arguments
