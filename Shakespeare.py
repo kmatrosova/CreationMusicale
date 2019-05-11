@@ -21,8 +21,11 @@ print(text[:100])
 # 1. int2char, which maps integers to characters
 # 2. char2int, which maps characters to integers
 chars = tuple(set(text))
+print(chars)
 int2char = dict(enumerate(chars))
+print(int2char)
 char2int = {ch: ii for ii, ch in int2char.items()}
+print(char2int)
 
 # Encode the text
 encoded = np.array([char2int[ch] for ch in text])
