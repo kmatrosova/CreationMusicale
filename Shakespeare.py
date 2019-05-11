@@ -9,6 +9,7 @@ print("hello")
 # Open shakespeare text file and read in data as `text`
 with open('data/shakespeare.txt', 'r') as f:
     text = f.read()
+    print("file found")
 
 # Showing the first 100 characters
 text[:100]
