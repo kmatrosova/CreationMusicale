@@ -4,7 +4,7 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 
-print("hello")
+print(torch.cuda.is_available())
 
 # Open shakespeare text file and read in data as `text`
 with open('data/shakespeare.txt', 'r') as f:
