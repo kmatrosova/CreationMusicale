@@ -4,12 +4,9 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 
-print(torch.cuda.is_available())
-
 # Open shakespeare text file and read in data as `text`
 with open('data/shakespeare.txt', 'r') as f:
     text = f.read()
-    print("file found")
 
 # Showing the first 100 characters
 text[:100]
@@ -157,6 +154,7 @@ class CharRNN(nn.Module):
        
 # Declaring the train method
 def train(net, data, epochs=10, batch_size=10, seq_length=50, lr=0.001, clip=5, val_frac=0.1, print_every=10):
+    print("training")
     ''' Training a network 
     
         Arguments
