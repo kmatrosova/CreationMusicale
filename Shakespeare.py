@@ -13,6 +13,7 @@ with open('data/shakespeare.txt', 'r') as f:
 
 # Showing the first 100 characters
 text[:100]
+print(text[:100])
 
 # encoding the text and map each character to an integer and vice versa
 
@@ -29,8 +30,11 @@ encoded = np.array([char2int[ch] for ch in text])
 # Showing the first 100 encoded characters
 encoded[:100]
 
+print(encoded[:100])
+
 # Defining method to encode one hot labels
 def one_hot_encode(arr, n_labels):
+    print("one_hot_encode")
     
     # Initialize the the encoded array
     one_hot = np.zeros((np.multiply(*arr.shape), n_labels), dtype=np.float32)
@@ -45,6 +49,7 @@ def one_hot_encode(arr, n_labels):
     
 # Defining method to make mini-batches for training
 def get_batches(arr, batch_size, seq_length):
+    print("get_batches")
     '''Create a generator that returns batches of size
        batch_size x seq_length from arr.
        
@@ -77,7 +82,9 @@ def get_batches(arr, batch_size, seq_length):
         yield x, y
 
 # Check if GPU is available
+
 train_on_gpu = torch.cuda.is_available()
+printf(train_on_gpu)
 if(train_on_gpu):
     print('Training on GPU!')
 else: 
