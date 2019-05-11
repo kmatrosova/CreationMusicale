@@ -84,7 +84,7 @@ def get_batches(arr, batch_size, seq_length):
 # Check if GPU is available
 
 train_on_gpu = torch.cuda.is_available()
-printf(train_on_gpu)
+print(train_on_gpu)
 if(train_on_gpu):
     print('Training on GPU!')
 else: 
