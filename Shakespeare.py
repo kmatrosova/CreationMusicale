@@ -248,7 +248,7 @@ print(net)
 # Declaring the hyperparameters
 batch_size = 128
 seq_length = 100
-n_epochs = 20 # start smaller if you are just testing initial behavior
+n_epochs = 5 # start smaller if you are just testing initial behavior
 
 # train the model
 train(net, encoded, epochs=n_epochs, batch_size=batch_size, seq_length=seq_length, lr=0.001, print_every=50)
@@ -328,8 +328,8 @@ def sample(net, size, prime='The', top_k=None):
     return ''.join(chars)
     
 # Generating new text
-f= open("result.txt","w+")
-f.write(sample(net, 5000, prime='A', top_k=5))
+#f= open("result.txt","w+")
+#f.write(sample(net, 5000, prime='A', top_k=5))
 f.close() 
 
 print(sample(net, 1000, prime='A', top_k=5))
