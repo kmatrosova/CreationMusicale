@@ -332,4 +332,4 @@ def sample(net, size, prime='The', top_k=None):
 #f.write(sample(net, 5000, prime='A', top_k=5))
 #f.close() 
 
-print(sample(net, 1000, prime='A', top_k=5))
+print(sample(net, 1000, prime='F', top_k=5))
