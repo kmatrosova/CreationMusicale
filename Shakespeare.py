@@ -5,7 +5,7 @@ from torch import nn
 import torch.nn.functional as F
 
 # Open shakespeare text file and read in data as `text`
-with open('data/dataset.txt', 'r') as f:
+with open('data/shakespeare.txt', 'r') as f:
     text = f.read()
 
 # Showing the first 100 characters
@@ -248,7 +248,7 @@ print(net)
 # Declaring the hyperparameters
 batch_size = 128
 seq_length = 100
-n_epochs = 5 # start smaller if you are just testing initial behavior
+n_epochs = 2 # start smaller if you are just testing initial behavior
 
 # train the model
 train(net, encoded, epochs=n_epochs, batch_size=batch_size, seq_length=seq_length, lr=0.001, print_every=50)
@@ -330,6 +330,6 @@ def sample(net, size, prime='The', top_k=None):
 # Generating new text
 #f= open("result.txt","w+")
 #f.write(sample(net, 5000, prime='A', top_k=5))
-f.close() 
+#f.close() 
 
 print(sample(net, 1000, prime='A', top_k=5))
