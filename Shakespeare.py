@@ -329,7 +329,7 @@ def sample(net, size, prime='The', top_k=None):
     
 # Generating new text
 f= open("result.txt","w+")
-f.write(sample(net, 5000, prime='A', top_k=5))
+f.write(sample(net, 5000, prime='F', top_k=5))
 f.close() 
 
 print(sample(net, 1000, prime='F', top_k=5))
