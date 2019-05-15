@@ -298,6 +298,7 @@ def predict(net, char, h=None, top_k=None):
         # select the likely next character with some element of randomness
         p = p.numpy().squeeze()
         char = np.random.choice(top_ch, p=p/p.sum())
+        print(char)
         
         # return the encoded value of the predicted char and the hidden state
         return net.int2char[char], h
