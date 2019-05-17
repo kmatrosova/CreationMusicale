@@ -184,7 +184,9 @@ def train(net, data, epochs=10, batch_size=10, seq_length=50, lr=0.001, clip=5, 
             counter += 1
             
             # One-hot encode our data and make them Torch tensors
+            print(x)
             x = one_hot_encode(x, n_chars)
+            print(x)
             inputs, targets = torch.from_numpy(x), torch.from_numpy(y)
             
             if(train_on_gpu):
