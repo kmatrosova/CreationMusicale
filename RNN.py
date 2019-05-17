@@ -184,7 +184,7 @@ def train(net, data, epochs=10, batch_size=10, seq_length=50, lr=0.001, clip=5, 
             counter += 1
             
             # One-hot encode our data and make them Torch tensors
-            x = nn.Embedding(x, n_chars)
+            x = one_hot_encode(x, n_chars)
             inputs, targets = torch.from_numpy(x), torch.from_numpy(y)
             
             if(train_on_gpu):
@@ -215,7 +215,7 @@ def train(net, data, epochs=10, batch_size=10, seq_length=50, lr=0.001, clip=5, 
                 net.eval()
                 for x, y in get_batches(val_data, batch_size, seq_length):
                     # One-hot encode our data and make them Torch tensors
-                    x = nn.Embedding(x, n_chars)
+                    x = one_hot_encode(x, n_chars)
                     x, y = torch.from_numpy(x), torch.from_numpy(y)
                     
                     # Creating new variables for the hidden state, otherwise
@@ -272,7 +272,7 @@ def predict(net, char, h=None, top_k=None):
         
         # tensor inputs
         x = np.array([[net.char2int[char]]])
-        x = nn.Embedding(x, len(net.chars))
+        x = one_hot_encode(x, len(net.chars))
         inputs = torch.from_numpy(x)
         
         if(train_on_gpu):
