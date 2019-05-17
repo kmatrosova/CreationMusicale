@@ -240,7 +240,7 @@ def train(net, data, epochs=10, batch_size=10, seq_length=50, lr=0.001, clip=5, 
                       
 # Define and print the net
 n_hidden=512
-n_layers=6
+n_layers=2
 
 net = CharRNN(chars, n_hidden, n_layers)
 print(net)
