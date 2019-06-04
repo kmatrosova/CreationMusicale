@@ -248,7 +248,7 @@ print(net)
 # Declaring the hyperparameters
 batch_size = 128
 seq_length = 100
-n_epochs = 30 # start smaller if you are just testing initial behavior
+n_epochs = 50 # start smaller if you are just testing initial behavior
 
 # train the model
 train(net, encoded, epochs=n_epochs, batch_size=batch_size, seq_length=seq_length, lr=0.001, print_every=50)
