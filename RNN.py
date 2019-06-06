@@ -5,7 +5,7 @@ from torch import nn
 import torch.nn.functional as F
 
 # Open shakespeare text file and read in data as `text`
-with open('data/nottingam_full_dataset.txt', 'r') as f:
+with open('data/morris_12transposed.txt', 'r') as f:
     text = f.read()
 
 # Showing the first 100 characters
