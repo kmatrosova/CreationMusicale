@@ -5,7 +5,7 @@ from torch import nn
 import torch.nn.functional as F
 
 # Open shakespeare text file and read in data as `text`
-with open('data/morris_12transposed.txt', 'r') as f:
+with open('data/nottingam_full_dataset.txt', 'r') as f:
     text = f.read()
 
 # Showing the first 100 characters
@@ -329,7 +329,7 @@ def sample(net, size, prime='The', top_k=None):
     
 # Generating new text
 f= open("result.txt","w+")
-f.write(sample(net, 10000, prime='F', top_k=5))
+f.write(sample(net, 50000, prime='F', top_k=5))
 f.close() 
 
 print("Learning done successfully. You can now find results in result.txt.")
