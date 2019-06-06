@@ -233,10 +233,9 @@ def train(net, data, epochs=10, batch_size=10, seq_length=50, lr=0.001, clip=5, 
                 
                 net.train() # reset to train mode after iterationg through validation data
                 
-                print("Epoch: {}/{}...".format(e+1, epochs),
-                      "Step: {}...".format(counter),
-                      "Loss: {:.4f}...".format(loss.item()),
-                      "Val Loss: {:.4f}".format(np.mean(val_losses)))
+                print("Epoch: {}/{} ".format(e+1, epochs),
+                      "{:.4f} ".format(loss.item()),
+                      "{:.4f}".format(np.mean(val_losses)))
                       
 # Define and print the net
 n_hidden=512
